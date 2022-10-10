@@ -10,8 +10,6 @@ class Sphere implements SceneObject
        this.radius = radius;
        this.material = material;
        
-       // remove this line when you implement spheres
-       throw new NotImplementedException("Spheres not implemented yet");
     }
     
     ArrayList<RayHit> intersect(Ray r)

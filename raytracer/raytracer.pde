@@ -138,6 +138,19 @@ class RayTracer
     {
       PVector origin = scene.camera;
       
+      float w = width;
+      float h = height;
+      float u = x*1.0 /w - 0.5;
+      float v = -(y*1.0/h - 0.5);
+      PVector direction = new PVector(u*w, w/2, v*h);
+      direction.normalize();
+      
+      Ray ray = new Ray(origin,direction);
+      ArrayList<RayHit> rayhit = scene.root.intersect(ray);
+      if (rayhit.size()>0){
+        return scene.lighting.getColor(rayhit.get(0), scene, ray.origin);
+      }
+      
       
       /*if (scene.reflections > 0)
       {
