@@ -137,8 +137,7 @@ class RayTracer
     color getColor(int x, int y)
     {
       PVector origin = scene.camera;
-      // remove this line when you implement basic raytracing
-      throw new NotImplementedException("Basic raytracing not implemented yet");
+      
       
       /*if (scene.reflections > 0)
       {
@@ -147,6 +146,6 @@ class RayTracer
       }*/
       
       /// this will be the fallback case
-      //return this.scene.background;
+      return this.scene.background;
     }
 }
